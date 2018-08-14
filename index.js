@@ -61,4 +61,4 @@ client.on("ready", () => {
     discordready = true
 })
 
-client.login('process.env.BOT_TOKEN');
+client.login(process.env.BOT_TOKEN);
