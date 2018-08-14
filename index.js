@@ -2,10 +2,16 @@ console.log("Program running");
 const Discord = require("discord.js")
 const client = new Discord.Client();
 let discordready = false
-const roletest = "478908416044302338"
-const channelgeneralid = "478601998644674578"
+const roleverified = "350067723864244224"
+const channelloungeid = "350070956863127567"
+const channelbugreportsid = "368914333524033537"
+const channelfeaturerequestsid = "368914405666062346"
+const channelofftopicid = "350071216255795200"
 
-let channelgeneral
+let channellounge
+let channelbugreports
+let channelfeaturerequests
+let channelofftopic
 
 
 function CheckIfModerator(Member) {
@@ -13,27 +19,26 @@ function CheckIfModerator(Member) {
 }
 
 function lockchannel(channel) {
-    channel.overwritePermissions(roletest, {"VIEW_CHANNEL":false},"lockdown activation")
+    channel.overwritePermissions(roleverified, {"VIEW_CHANNEL":false},"lockdown activation")
 }
 
 function unlockchannel(channel) {
-    channel.overwritePermissions(roletest, {"VIEW_CHANNEL":true},"lockdown deactivation")
+    channel.overwritePermissions(roleverified, {"VIEW_CHANNEL":true},"lockdown deactivation")
 }
 
-
 function lockdown(message) {
-    lockchannel(channelgeneral);
-
-
-
+    lockchannel(channellounge);
+    lockchannel(channelbugreports);
+    lockchannel(channelfeaturerequests);
+    lockchannel(channelofftopic);
     message.channel.send("Lockdown activated.");
 }
 
 function unlockdown(message) {
-    unlockchannel(channelgeneral);
-
-
-
+    unlockchannel(channellounge);
+    unlockchannel(channelbugreports);
+    unlockchannel(channelfeaturerequests);
+    unlockchannel(channelofftopic);
     message.channel.send("Lockdown deactivated.");
 }
 
@@ -54,11 +59,13 @@ client.on("message", message => {
 })
 
 
-
 client.on("ready", () => {
     console.log("Fully loaded!")
-    channelgeneral = client.channels.get(channelgeneralid)
+    channellounge = client.channels.get(channelloungeid)
+    channelbugreports = client.channels.get(channelbugreportsid)
+    channelfeaturerequests = client.channels.get(channelfeaturerequestsid)
+    channelofftopic = client.channels.get(channelofftopicid)
     discordready = true
 })
 
-client.login(process.env.BOT_TOKEN);
+client.login('NDc4NTgxNDc3MjU3NTEwOTEz.DlMyTA.VlDMqzW1_Nro-L3zOiEVZN3Jzc0');
