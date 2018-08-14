@@ -68,4 +68,4 @@ client.on("ready", () => {
     discordready = true
 })
 
-client.login('NDc4NTgxNDc3MjU3NTEwOTEz.DlMyTA.VlDMqzW1_Nro-L3zOiEVZN3Jzc0');
+client.login(process.env.BOT_TOKEN);
