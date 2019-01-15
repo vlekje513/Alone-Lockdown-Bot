@@ -2,7 +2,6 @@ console.log("Program running");
 const Discord = require("discord.js")
 const client = new Discord.Client();
 let discordready = false
-const roleverified = "350067723864244224"
 const channelgeneralid = "395769866675814425"
 const channelgoodmusicid = "462947123168542734"
 const channelmemesid = "500668845627932685"
@@ -77,14 +76,14 @@ client.on("message", message => {
 
 client.on("ready", () => {
     console.log("Fully loaded!")
-    channelgeneral = client.channels.get(channelgeneral)
-    channelgoodmusic = client.channels.get(channelgoodmusic)
-    channelmemes = client.channels.get(channelmemes)
-    channeldarkjokes = client.channels.get(channeldarkjokes)
-    channelfeedback = client.channels.get(channelfeedback)
-    channelcoolmoments = client.channels.get(channelcoolmoments)
-    channelbots = client.channels.get(channelbots)
-    channelvleksquotes = client.channels.get(channelvleksquotes)
+    channelgeneral = client.channels.get(channelgeneralid)
+    channelgoodmusic = client.channels.get(channelgoodmusicid)
+    channelmemes = client.channels.get(channelmemesid)
+    channeldarkjokes = client.channels.get(channeldarkjokesid)
+    channelfeedback = client.channels.get(channelfeedbackid)
+    channelcoolmoments = client.channels.get(channelcoolmomentsid)
+    channelbots = client.channels.get(channelbotsid)
+    channelvleksquotes = client.channels.get(channelvleksquotesid)
     discordready = true
 })
 
