@@ -35,7 +35,7 @@ function unlockchannel(channel) {
 }
 
 function lockdown(message) {
-    lockchannel(channellounge);
+    lockchannel(channelgeneral);
     lockchannel(channelgoodmusic);
     lockchannel(channelmemes);
     lockchannel(channeldarkjokes);
@@ -47,7 +47,7 @@ function lockdown(message) {
 }
 
 function unlockdown(message) {
-    unlockchannel(channellounge);
+    unlockchannel(channelgeneral);
     unlockchannel(channelgoodmusic);
     unlockchannel(channelmemes);
     unlockchannel(channeldarkjokes);
