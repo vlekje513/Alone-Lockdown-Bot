@@ -3,15 +3,23 @@ const Discord = require("discord.js")
 const client = new Discord.Client();
 let discordready = false
 const roleverified = "350067723864244224"
-const channelloungeid = "350070956863127567"
-const channelbugreportsid = "368914333524033537"
-const channelfeaturerequestsid = "368914405666062346"
-const channelofftopicid = "350071216255795200"
+const channelgeneralid = "395769866675814425"
+const channelgoodmusicid = "462947123168542734"
+const channelmemesid = "500668845627932685"
+const channeldarkjokesid = "455237509752815626"
+const channelfeedbackid = "455654036272578561"
+const channelcoolmomentsid = "403381367834148864"
+const channelbotsid = "435182735191965696"
+const channelvleksquotesid = "459187135447302155"
 
-let channellounge
-let channelbugreports
-let channelfeaturerequests
-let channelofftopic
+let channelgeneral
+let channelgoodmusic
+let channelmemes
+let channeldarkjokes
+let channelfeedback
+let channelcoolmoments
+let channelbots
+let channelvleksquotes
 
 
 function CheckIfModerator(Member) {
@@ -19,26 +27,34 @@ function CheckIfModerator(Member) {
 }
 
 function lockchannel(channel) {
-    channel.overwritePermissions(roleverified, {"VIEW_CHANNEL":false},"lockdown activation")
+    channel.overwritePermissions(channel.guild.id, {"VIEW_CHANNEL":false},"lockdown activation")
 }
 
 function unlockchannel(channel) {
-    channel.overwritePermissions(roleverified, {"VIEW_CHANNEL":true},"lockdown deactivation")
+    channel.overwritePermissions(channel.guild.id, {"VIEW_CHANNEL":true},"lockdown deactivation")
 }
 
 function lockdown(message) {
     lockchannel(channellounge);
-    lockchannel(channelbugreports);
-    lockchannel(channelfeaturerequests);
-    lockchannel(channelofftopic);
+    lockchannel(channelgoodmusic);
+    lockchannel(channelmemes);
+    lockchannel(channeldarkjokes);
+    lockchannel(channelfeedback);
+    lockchannel(channelcoolmoments);
+    lockchannel(channelbots);
+    lockchannel(channelvleksquotes);
     message.channel.send("Lockdown activated.");
 }
 
 function unlockdown(message) {
     unlockchannel(channellounge);
-    unlockchannel(channelbugreports);
-    unlockchannel(channelfeaturerequests);
-    unlockchannel(channelofftopic);
+    unlockchannel(channelgoodmusic);
+    unlockchannel(channelmemes);
+    unlockchannel(channeldarkjokes);
+    unlockchannel(channelfeedback);
+    unlockchannel(channelcoolmoments);
+    unlockchannel(channelbots);
+    unlockchannel(channelvleksquotes);
     message.channel.send("Lockdown deactivated.");
 }
 
@@ -61,10 +77,14 @@ client.on("message", message => {
 
 client.on("ready", () => {
     console.log("Fully loaded!")
-    channellounge = client.channels.get(channelloungeid)
-    channelbugreports = client.channels.get(channelbugreportsid)
-    channelfeaturerequests = client.channels.get(channelfeaturerequestsid)
-    channelofftopic = client.channels.get(channelofftopicid)
+    channelgeneral = client.channels.get(channelgeneral)
+    channelgoodmusic = client.channels.get(channelgoodmusic)
+    channelmemes = client.channels.get(channelmemes)
+    channeldarkjokes = client.channels.get(channeldarkjokes)
+    channelfeedback = client.channels.get(channelfeedback)
+    channelcoolmoments = client.channels.get(channelcoolmoments)
+    channelbots = client.channels.get(channelbots)
+    channelvleksquotes = client.channels.get(channelvleksquotes)
     discordready = true
 })
 
